@@ -1,101 +1,102 @@
-# Chat Application with AIMLAPI Integration
 
-A simple chat application built with Next.js that integrates with AIMLAPI for AI-powered conversations.
+# Ứng Dụng Chat Tích Hợp AIMLAPI
 
-## Features
+Một ứng dụng chat đơn giản được xây dựng với Next.js, tích hợp AIMLAPI để tạo hội thoại thông minh sử dụng trí tuệ nhân tạo.
 
-- Real-time chat interface
-- AI-powered responses using AIMLAPI
-- Chat history storage in CSV format
-- Modern and responsive UI
+## Tính Năng
 
-## Prerequisites
+- Giao diện chat thời gian thực
+- Phản hồi được hỗ trợ bởi AI sử dụng AIMLAPI
+- Lưu lịch sử trò chuyện dưới định dạng CSV
+- Giao diện hiện đại và đáp ứng tốt trên nhiều thiết bị
 
-- Node.js 18+ installed
-- AIMLAPI account and API key
+## Yêu Cầu Trước Khi Cài Đặt
 
-## Installation
+- Đã cài đặt Node.js phiên bản 18 trở lên
+- Tài khoản AIMLAPI và khóa API
 
-1. Clone the repository:
+## Cài Đặt
+
+1. Clone kho mã nguồn:
 ```bash
 git clone <your-repository-url>
 cd chat-app
 ```
 
-2. Install dependencies:
+2. Cài đặt các thư viện phụ thuộc:
 ```bash
 npm install
 ```
 
-3. Create a `.env.local` file in the root directory and add your AIMLAPI key:
+3. Tạo file `.env.local` trong thư mục gốc và thêm khóa AIMLAPI của bạn:
 ```
 AIMLAPI_KEY=your_api_key_here
 ```
 
-## AIMLAPI Integration
+## Tích Hợp AIMLAPI
 
-This project uses [AIMLAPI](https://aimlapi.com/app/) for AI chat functionality. To get started:
+Dự án này sử dụng [AIMLAPI](https://aimlapi.com/app/) để cung cấp chức năng chat AI. Để bắt đầu:
 
-1. Sign up for an account at [AIMLAPI](https://aimlapi.com/app/)
-2. Generate your API key from the dashboard
-3. Add the API key to your `.env.local` file
+1. Đăng ký tài khoản tại [AIMLAPI](https://aimlapi.com/app/)
+2. Tạo khóa API từ trang quản lý
+3. Thêm khóa API vào file `.env.local`
 
-### API Configuration
+### Cấu Hình API
 
-The application uses the following AIMLAPI endpoints:
-- Chat completions: `https://api.aimlapi.com/v1/chat/completions`
-- Model: `gpt-3.5-turbo`
+Ứng dụng sử dụng các endpoint sau của AIMLAPI:
+- Hoàn thành cuộc trò chuyện: `https://api.aimlapi.com/v1/chat/completions`
+- Mô hình: `gpt-3.5-turbo`
 
-## Running the Application
+## Chạy Ứng Dụng
 
-1. Start the development server:
+1. Khởi động máy chủ phát triển:
 ```bash
 npm run dev
 ```
 
-2. Open [http://localhost:3000](http://localhost:3000) in your browser
+2. Mở [http://localhost:3000](http://localhost:3000) trong trình duyệt của bạn
 
-## Data Collection
+## Thu Thập Dữ Liệu
 
-The application automatically saves chat history to `data/chat_history.csv` with the following format:
-- question: User's input
-- answer: AI's response
-- timestamp: Time of the conversation
+Ứng dụng sẽ tự động lưu lịch sử trò chuyện vào `data/chat_history.csv` với định dạng sau:
+- question: Câu hỏi từ người dùng
+- answer: Phản hồi từ AI
+- timestamp: Thời gian diễn ra hội thoại
 
-This data can be used for:
-- Training custom models
-- Analyzing common questions
-- Improving response quality
+Dữ liệu này có thể được sử dụng để:
+- Huấn luyện các mô hình tùy chỉnh
+- Phân tích các câu hỏi phổ biến
+- Cải thiện chất lượng phản hồi
 
-## Project Structure
+## Cấu Trúc Dự Án
 
 ```
 chat-app/
 ├── app/
 │   ├── api/
 │   │   └── chat/
-│   │       └── route.ts    # API route handler
-│   └── page.tsx            # Main chat interface
+│   │       └── route.ts    # Xử lý API
+│   └── page.tsx            # Giao diện chính của ứng dụng chat
 ├── data/
-│   └── chat_history.csv    # Chat history storage
+│   └── chat_history.csv    # Lưu lịch sử trò chuyện
 ├── public/
-├── .env.local             # Environment variables
+├── .env.local              # Biến môi trường
 └── package.json
 ```
 
-## Contributing
+## Đóng Góp
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+1. Fork kho mã nguồn
+2. Tạo nhánh chức năng mới (`git checkout -b feature/amazing-feature`)
+3. Commit thay đổi của bạn (`git commit -m 'Add some amazing feature'`)
+4. Push lên nhánh đó (`git push origin feature/amazing-feature`)
+5. Mở Pull Request
 
-## License
+## Giấy Phép
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+Dự án này được phát hành theo giấy phép MIT - xem file LICENSE để biết chi tiết.
 
-## Acknowledgments
+## Lời Cảm Ơn
 
-- [AIMLAPI](https://aimlapi.com/app/) for providing the AI chat API
-- Next.js team for the amazing framework
+- [AIMLAPI](https://aimlapi.com/app/) vì đã cung cấp API chat AI
+- Đội ngũ Next.js vì framework tuyệt vời
