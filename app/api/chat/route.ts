@@ -48,9 +48,19 @@ export async function POST(req: Request) {
     // Lưu câu hỏi và câu trả lời vào file CSV
     const lastUserMessage = messages[messages.length - 1].content;
     const aiResponse = data.choices[0].message.content;
-    const timestamp = new Date().toISOString();
+    const now = new Date();
+    const timestamp = now.toLocaleString('vi-VN', { 
+      timeZone: 'Asia/Ho_Chi_Minh',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    });
     
-    const csvLine = `"${lastUserMessage.replace(/"/g, '""')}","${aiResponse.replace(/"/g, '""')}","${timestamp}"\n`;
+    // Format CSV với xuống dòng và định dạng thời gian Việt Nam
+    const csvLine = `"${lastUserMessage.replace(/"/g, '""')}","${aiResponse.replace(/"/g, '""')}","${timestamp}"\n\n`;
     
     // Đảm bảo thư mục data tồn tại
     const dataDir = path.join(process.cwd(), 'data');
