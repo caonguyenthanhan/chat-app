@@ -1,7 +1,6 @@
 "use client"
 
-import type React from "react"
-
+import React from "react"
 import { useState } from "react"
 
 // Simple chat interface without external components
@@ -97,9 +96,18 @@ export default function Chat() {
                   color: msg.role === "user" ? "white" : "black",
                   borderBottomRightRadius: msg.role === "user" ? "4px" : "18px",
                   borderBottomLeftRadius: msg.role === "user" ? "18px" : "4px",
+                  whiteSpace: "pre-wrap",
+                  wordBreak: "break-word",
+                  lineHeight: "1.5",
+                  fontSize: "15px",
                 }}
               >
-                {msg.content}
+                {msg.content.split('\n').map((line, i) => (
+                  <React.Fragment key={i}>
+                    {line}
+                    {i < msg.content.split('\n').length - 1 && <br />}
+                  </React.Fragment>
+                ))}
               </div>
             </div>
           ))
